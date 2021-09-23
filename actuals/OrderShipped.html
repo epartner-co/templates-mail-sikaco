@@ -8,7 +8,446 @@
   <title>{{_accountInfo.TradingName}}</title>
 
   <!-- * Style Sheet -->
-  <link rel="stylesheet" href="/files/TemplateMails.css">
+  <style>
+    :root {
+  --font-family: 'Titillium Web', sans-serif;
+  --font-family-2: 'Roboto', sans-serif;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-green: #5cca07;
+  --color-red: #ff0000;
+  --color-yellow: #f5b325;
+  --color-yellow-2: #ffc700;
+  --color-gray: #8b8b8b;
+  --color-gray-2: #b3b1b1;
+  --color-gray-3: #616161;
+  --color-gray-light-2: #faf8f4;
+  --color-gray-light: #f1f1f1;
+  --color-gray-light-3: #ededed;
+  --color-gray-dark: #3c3c3c;
+}
+
+/* ! Globals */
+html {
+  background-color: var(--color-gray-light);
+}
+body {
+  font-family: var(--font-family);
+  box-sizing: border-box;
+}
+
+/* ! Specifics */
+.Table {
+  max-width: 40rem;
+}
+.Table__row {
+  background-color: var(--color-gray-light-2);
+}
+
+/* ! Header */
+.Header {
+  background-color: var(--color-yellow);
+}
+.Header__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+.Header__logo-container {
+  width: 40%;
+}
+.Header__container--bottom {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--color-yellow);
+}
+.Header__link {
+  padding: 0 2rem;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--color-white);
+}
+
+/* ! Main Banner */
+.Banner__image {
+  width: 100%;
+}
+
+/* ! Text top */
+.Text {
+  margin: 0;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: var(--color-black);
+}
+.Text--user {
+  padding: 3rem 0 0;
+  font-weight: 500;
+}
+.Text--description {
+  margin-right: 2rem;
+  margin-left: 2rem;
+  font-size: 14px;
+  line-height: 25px;
+  color: black;
+}
+.horizontal-line {
+  width: 15%;
+}
+.horizontal-line--top {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.horizontal-line--bottom {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ! Breadcrumb images top */
+.Breadcrumb__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+.Breadcrumb__item {
+  z-index: 2;
+}
+.Breadcrumb__item img {
+  width: 115px;
+}
+.Breadcrumb__item::after {
+  content: '';
+  display: flex;
+  width: 6rem;
+  height: 0.13rem;
+  transform: translate(7.2rem, -7.5rem);
+  z-index: 1;
+  background: var(--color-gray-2);
+}
+.Breadcrumb__item:last-child::after {
+  display: none;
+}
+.Breadcrumb__item--good::after {
+  background-color: var(--color-green);
+}
+.Breadcrumb__item--wait::after {
+  background-color: var(--color-yellow-2);
+}
+.Breadcrumb__item--bad::after {
+  background-color: var(--color-red);
+}
+.Breadcrumb__text {
+  color: var(--color-gray-2);
+}
+.Breadcrumb__text--good {
+  font-weight: bold;
+  color: var(--color-green);
+}
+.Breadcrumb__text--wait {
+  font-weight: bold;
+  color: var(--color-yellow-2);
+}
+.Breadcrumb__text--bad {
+  font-weight: bold;
+  color: var(--color-red);
+}
+
+/* ! Order number */
+.Order-number {
+  padding: 2rem;
+}
+.Order-number__text {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* ! Boxes payment method and address shipping */
+.Boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Boxes__title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Boxes__title {
+  margin: 1.6rem 2rem 1.3rem 2rem;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-gray-dark);
+}
+.Boxes__title--text {
+  border-bottom: 0.1rem solid var(--color-gray-light-3);
+}
+.Boxes__title--left {
+  width: 70%;
+  margin-bottom: 0;
+}
+.Boxes__title--right {
+  margin-bottom: 0;
+  margin-right: 0;
+  width: 30%;
+  text-align: center;
+}
+.Boxes__container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  width: 50%;
+  height: 12rem;
+  max-height: 12rem;
+  font-size: 14px;
+  border-radius: 20px;
+  background-color: var(--color-white);
+}
+.Boxes__container--left {
+  margin-right: 0.5rem;
+}
+.Boxes__container--right {
+  margin-left: 0.5rem;
+}
+.Address__container {
+  margin: 0 2rem 1rem 2rem;
+  text-align: center;
+}
+.Payment__container {
+  padding: 1rem;
+  padding-top: 0;
+  text-align: center;
+}
+.Payment__data {
+  margin: 0 2rem;
+  line-height: 1.5;
+  font-size: 14px;
+}
+.Payment__extra-data {
+  padding-bottom: 0.25rem;
+  font-size: 1rem;
+  line-height: 20px;
+  border-bottom: 0.1rem solid black;
+}
+.Payment__extra-data--bottom {
+  padding-top: 0.25rem;
+}
+
+/* ! Product list shipped */
+.Products-list {
+  padding: 20px;
+  padding-bottom: 2rem;
+  line-height: 20px;
+  font-size: 14px;
+}
+.Products-list__container {
+  padding: 1rem;
+  border-radius: 20px;
+  background: var(--color-white);
+}
+.Products-list__box {
+  padding: 1rem;
+}
+.Product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  font-weight: 700;
+  border-bottom: 0.1rem solid var(--color-gray-light-3);
+}
+.Product:last-child {
+  border-bottom: 0;
+}
+.Product__image-container {
+  padding-right: 1rem;
+  width: 20%;
+}
+.Product__image-container img {
+  width: 100%;
+}
+.Product__text {
+  padding: 1.3rem;
+  width: 55%;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.Product__description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+/* ! Payment information and values */
+.Payment {
+  padding: 2rem;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+.Payment-info__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+}
+.Payment-info__text {
+  padding-right: 2rem;
+  font-size: 10px;
+  color: var(--color-gray);
+}
+.Payment-info__values {
+  margin: 0 2rem 0 0;
+  border-top: 0.1rem solid var(--color-black);
+  border-bottom: 0.1rem solid var(--color-black);
+}
+.Value {
+  height: 1rem;
+}
+.Value__data {
+  color: var(--color-black);
+  font-weight: bold;
+}
+.Value__price {
+  line-height: 20px;
+  text-align: right;
+  font-size: 14px;
+  color: var(--color-gray-dark);
+}
+.Value__price--total {
+  color: var(--color-black);
+  font-weight: bold;
+}
+
+/* ! Button cart abandoned */
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.Button__link {
+  padding: 1rem 5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--color-gray-dark);
+  background-color: var(--color-yellow);
+}
+
+/* ! Icons container bottom */
+.Icons__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: var(--color-white);
+}
+.Icons__item {
+  padding: 0 1rem;
+  height: 13rem;
+  text-align: center;
+}
+.Icons {
+  font-family: var(--font-family-2);
+}
+.Icon__title {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  color: var(--color-gray-dark);
+}
+.Icon__description {
+  font-size: 11px;
+  color: var(--color-gray-dark);
+}
+
+/* ! Footer */
+.Footer {
+  padding: 2rem;
+  background-color: var(--color-gray-3);
+}
+.Footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.Footer__container--bottom {
+  align-items: center;
+  border-top: 0.1rem solid rgba(192, 197, 204, 0.22);
+}
+.Footer__box--left {
+  width: 40%;
+}
+.Footer__box--right {
+  width: 70%;
+}
+.Footer__title {
+  color: var(--color-white);
+}
+.Footer__title--sika {
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+.Footer__title--categories {
+  text-transform: uppercase;
+}
+.Footer__text {
+  margin: 0 0 0.5rem;
+  font-weight: 300;
+  color: var(--color-white);
+}
+.Footer__text a {
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--color-white);
+}
+.Footer__categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Footer__categories-box {
+  padding: 0 0 0 0.5rem;
+  width: 50%;
+  height: 100%;
+  border-left: 0.2rem solid var(--color-white);
+}
+.Footer__info-container {
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--color-white);
+}
+.Footer__info-container a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+.Footer__info-container a:hover {
+  text-decoration: underline;
+}
+
+/* ! Socials Buttons Bottom */ 
+.Socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Socials__text {
+  font-size: 14px;
+  color: var(--color-white);
+}
+.Socials__icon--facebook {
+  padding: 1rem 0.5rem 0.5rem;
+}
+.Socials__icon--instagram {
+  padding: 1rem 0rem 0.5rem;
+}
+
+  </style>
   <!-- * / Style Sheet -->
 
   <!-- * Fonts -->
