@@ -9,9 +9,9 @@
 
   <!-- * Style Sheet -->
   <style>
-    :root {
-  --font-family: 'Titillium Web', sans-serif;
-  --font-family-2: 'Roboto', sans-serif;
+:root {
+  --font-family: "Titillium Web", sans-serif;
+  --font-family-2: "Roboto", sans-serif;
   --color-white: #ffffff;
   --color-black: #000000;
   --color-green: #5cca07;
@@ -29,10 +29,10 @@
 
 /* ! Globals */
 html {
-  background-color: var(--color-gray-light);
+  background-color: #f1f1f1;
 }
 body {
-  font-family: var(--font-family);
+  font-family: "Titillium Web", sans-serif;
   box-sizing: border-box;
 }
 
@@ -41,12 +41,12 @@ body {
   max-width: 40rem;
 }
 .Table__row {
-  background-color: var(--color-gray-light-2);
+  background-color: #faf8f4;
 }
 
 /* ! Header */
 .Header {
-  background-color: var(--color-yellow);
+  background-color: #f5b325;
 }
 .Header__container {
   display: flex;
@@ -60,14 +60,14 @@ body {
 .Header__container--bottom {
   margin-top: 1rem;
   padding: 1rem;
-  background: var(--color-yellow);
+  background: #f5b325;
 }
 .Header__link {
   padding: 0 2rem;
   font-size: 16px;
   text-decoration: none;
   text-transform: capitalize;
-  color: var(--color-white);
+  color: #ffffff;
 }
 
 /* ! Main Banner */
@@ -81,7 +81,7 @@ body {
   font-size: 24px;
   line-height: 40px;
   text-align: center;
-  color: var(--color-black);
+  color: #000000;
 }
 .Text--user {
   padding: 3rem 0 0;
@@ -120,40 +120,40 @@ body {
   width: 115px;
 }
 .Breadcrumb__item::after {
-  content: '';
+  content: "";
   display: flex;
   width: 6rem;
   height: 0.13rem;
   transform: translate(7.2rem, -7.5rem);
   z-index: 1;
-  background: var(--color-gray-2);
+  background: #b3b1b1;
 }
 .Breadcrumb__item:last-child::after {
   display: none;
 }
 .Breadcrumb__item--good::after {
-  background-color: var(--color-green);
+  background-color: #5cca07;
 }
 .Breadcrumb__item--wait::after {
-  background-color: var(--color-yellow-2);
+  background-color: #ffc700;
 }
 .Breadcrumb__item--bad::after {
-  background-color: var(--color-red);
+  background-color: #ff0000;
 }
 .Breadcrumb__text {
-  color: var(--color-gray-2);
+  color: #b3b1b1;
 }
 .Breadcrumb__text--good {
   font-weight: bold;
-  color: var(--color-green);
+  color: #5cca07;
 }
 .Breadcrumb__text--wait {
   font-weight: bold;
-  color: var(--color-yellow-2);
+  color: #ffc700;
 }
 .Breadcrumb__text--bad {
   font-weight: bold;
-  color: var(--color-red);
+  color: #ff0000;
 }
 
 /* ! Order number */
@@ -182,10 +182,10 @@ body {
   padding-bottom: 0.5rem;
   font-weight: 700;
   font-size: 14px;
-  color: var(--color-gray-dark);
+  color: #3c3c3c;
 }
 .Boxes__title--text {
-  border-bottom: 0.1rem solid var(--color-gray-light-3);
+  border-bottom: 0.1rem solid #ededed;
 }
 .Boxes__title--left {
   width: 70%;
@@ -206,7 +206,7 @@ body {
   max-height: 12rem;
   font-size: 14px;
   border-radius: 20px;
-  background-color: var(--color-white);
+  background-color: #ffffff;
 }
 .Boxes__container--left {
   margin-right: 0.5rem;
@@ -248,7 +248,7 @@ body {
 .Products-list__container {
   padding: 1rem;
   border-radius: 20px;
-  background: var(--color-white);
+  background: #ffffff;
 }
 .Products-list__box {
   padding: 1rem;
@@ -259,7 +259,7 @@ body {
   justify-content: center;
   padding-bottom: 2rem;
   font-weight: 700;
-  border-bottom: 0.1rem solid var(--color-gray-light-3);
+  border-bottom: 0.1rem solid #ededed;
 }
 .Product:last-child {
   border-bottom: 0;
@@ -300,28 +300,28 @@ body {
 .Payment-info__text {
   padding-right: 2rem;
   font-size: 10px;
-  color: var(--color-gray);
+  color: #8b8b8b;
 }
 .Payment-info__values {
   margin: 0 2rem 0 0;
-  border-top: 0.1rem solid var(--color-black);
-  border-bottom: 0.1rem solid var(--color-black);
+  border-top: 0.1rem solid #000000;
+  border-bottom: 0.1rem solid #000000;
 }
 .Value {
   height: 1rem;
 }
 .Value__data {
-  color: var(--color-black);
+  color: #000000;
   font-weight: bold;
 }
 .Value__price {
   line-height: 20px;
   text-align: right;
   font-size: 14px;
-  color: var(--color-gray-dark);
+  color: #3c3c3c;
 }
 .Value__price--total {
-  color: var(--color-black);
+  color: #000000;
   font-weight: bold;
 }
 
@@ -336,8 +336,8 @@ body {
   padding: 1rem 5rem;
   border-radius: 6px;
   text-decoration: none;
-  color: var(--color-gray-dark);
-  background-color: var(--color-yellow);
+  color: #3c3c3c;
+  background-color: #f5b325;
 }
 
 /* ! Icons container bottom */
@@ -346,7 +346,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background: var(--color-white);
+  background: #ffffff;
 }
 .Icons__item {
   padding: 0 1rem;
@@ -354,22 +354,22 @@ body {
   text-align: center;
 }
 .Icons {
-  font-family: var(--font-family-2);
+  font-family: "Roboto", sans-serif;
 }
 .Icon__title {
   margin-bottom: 0;
   text-transform: uppercase;
-  color: var(--color-gray-dark);
+  color: #3c3c3c;
 }
 .Icon__description {
   font-size: 11px;
-  color: var(--color-gray-dark);
+  color: #3c3c3c;
 }
 
 /* ! Footer */
 .Footer {
   padding: 2rem;
-  background-color: var(--color-gray-3);
+  background-color: #616161;
 }
 .Footer__container {
   display: flex;
@@ -387,7 +387,7 @@ body {
   width: 70%;
 }
 .Footer__title {
-  color: var(--color-white);
+  color: #ffffff;
 }
 .Footer__title--sika {
   margin-bottom: 1rem;
@@ -399,12 +399,12 @@ body {
 .Footer__text {
   margin: 0 0 0.5rem;
   font-weight: 300;
-  color: var(--color-white);
+  color: #ffffff;
 }
 .Footer__text a {
   text-decoration: none;
   font-size: 12px;
-  color: var(--color-white);
+  color: #ffffff;
 }
 .Footer__categories {
   display: flex;
@@ -415,22 +415,22 @@ body {
   padding: 0 0 0 0.5rem;
   width: 50%;
   height: 100%;
-  border-left: 0.2rem solid var(--color-white);
+  border-left: 0.2rem solid #ffffff;
 }
 .Footer__info-container {
   text-decoration: none;
   font-size: 12px;
-  color: var(--color-white);
+  color: #ffffff;
 }
 .Footer__info-container a {
-  color: var(--color-white);
+  color: #ffffff;
   text-decoration: none;
 }
 .Footer__info-container a:hover {
   text-decoration: underline;
 }
 
-/* ! Socials Buttons Bottom */ 
+/* ! Socials Buttons Bottom */
 .Socials {
   display: flex;
   align-items: center;
@@ -438,7 +438,7 @@ body {
 }
 .Socials__text {
   font-size: 14px;
-  color: var(--color-white);
+  color: #ffffff;
 }
 .Socials__icon--facebook {
   padding: 1rem 0.5rem 0.5rem;
@@ -446,6 +446,7 @@ body {
 .Socials__icon--instagram {
   padding: 1rem 0rem 0.5rem;
 }
+
 
   </style>
   <!-- * / Style Sheet -->
@@ -643,7 +644,7 @@ body {
                         {{/each}}
                       </td>
                     </tr>
-                    {{/compare}}>
+                    {{/compare}}
 
                   </tbody>
                 </table>
